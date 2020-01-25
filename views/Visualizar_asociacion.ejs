@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <pr>
+        <h2 align="center">Sistema de descubrimiento de conocimiento</h2> 
+          <h2 align="center">a partir de datos censales y de negocio</h2></pr>
+        <pre>
+        <button class="browserupgrade" onclick="window.location='weka.ejs'">Pagina Anterior </button> &nbsp;
+        <h3>Ejecución del algoritmo de asociacion </h3>
+        </h3>
+    </pre>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan=2>X=> Y  </th><th>Confianza</th> <th>Soporte</th>
+                </tr>
+                <%for (var i=1;i< asociacion.length ;i++){%>
+                <tr>
+                    <td>
+                        <%=asociacion[i].X %>
+                       </td>
+                       <td>
+                        <%=asociacion[i].Y %>
+                       </td>
+                       <td>
+                        <%=asociacion[i].Confidence %>
+                       </td>
+                    <td>
+                     <%=asociacion[i].Support %>
+                    </td>
+                </tr>
+                <%}%>
+            </tbody>
+        </table>
+
+</body>
+
+</html>

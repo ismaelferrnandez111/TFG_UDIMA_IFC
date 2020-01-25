@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<a href="http://localhost:3000/" class="">
+<img src="/images/boton_inicio.png" style="width: 100px" style="height: 100px" ></a>
+<pr>
+  <h2 align="center">Sistema de descubrimiento de conocimiento</h2> 
+    <h2 align="center">a  partir de datos censales y de negocio</h2></pr>
+<div class="posproceso">
+
+<form action="/Posproceso.ejs" id="pospoForm" method="POST">
+ <h2>Ejecutar Preproceso</h2>
+ <input type="submit" value="1.Ejecutar variables genericas"   onClick="document.getElementById('oculto1').style.visibility='visible'" /> &nbsp;
+ <div id="oculto1" style="visibility:hidden">
+            Ejecutando proceso
+</div>
+</form>
+<form action="/clustering.ejs" id="pospoForm" method="POST">
+
+  <input type="submit" value="2.Generar tabla Cluster"   onClick="document.getElementById('oculto2').style.visibility='visible'" /> &nbsp;
+  <div id="oculto2" style="visibility:hidden">
+    Ejecutando proceso
+ </div>
+</form>
+
+<form action="/asociacion.ejs" id="pospoForm" method="POST">
+
+    <input type="submit" value="3.Variables asociacion"   onClick="document.getElementById('oculto3').style.visibility='visible'" /> &nbsp;
+    <div id="oculto3" style="visibility:hidden">
+      Ejecutando proceso
+   </div>
+ </form>
+
+ <form action="/tabla_asociacion.ejs" id="pospoForm" method="POST">
+
+  <input type="submit" value="4.Tabla asociacion"   onClick="document.getElementById('oculto4').style.visibility='visible'" /> &nbsp;
+  <div id="oculto4" style="visibility:hidden">
+    Ejecutando proceso
+ </div>
+</form>
+</div>
+<div class="clsuter">
+<form action="/Alg_cluster.ejs" id="pospoForm" method="POST" >
+  <h2>Algoritmo clustering</h2>
+<h3>Selecciona los campos y ejecuta el algoritmo</h3>
+   <h4>     <fieldset > 
+   
+                           <input type="radio" name="HombresNac"  value="EspanolesHombres" checked>Espanoles Hombres </input>
+                           <input type="radio" name="HombresNac"  value="ExtranjerosHombres">Extranjeros Hombres</input><br>
+                           <input type="radio" name="genero"   value="Hombres" checked>Hombres</input>
+                           <input type="radio" name="genero"  value="Mujeres">Mujeres</input><br>
+                           <input type="radio" name="MujeresNac"   value="EspanolesMujeres" checked>Espanoles Mujeres</input>
+                           <input type="radio" name="MujeresNac"   value="ExtranjerosMujeres">Extranjeros Mujeres</input> <br>  <br> 
+                           
+                           <input type="radio" name="Negocio1" value="Numero_inmobiliarias"checked>Numero de inmobiliarias</input>
+                           <input type="radio" name="Negocio1" value="Numero_estancos">Numero de estancos</input><br> 
+                           <input type="radio" name="Negocio2" value="Numero_locutorios"checked>Numero de locutorios</input>
+                           <input type="radio" name="Negocio2" value="Numero_farmacias">Numero de farmacias</input><br> 
+                           <input type="radio" name="Negocio2" value="Numero_autoescuelas">Numero de autoescuelas</input>
+          </fieldset> 
+</h4>
+<h3>
+  Algoritmo clustering nos muestra los centroides selecciona el k
+ </h3>
+   <h4>
+    <select name="k">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="2">3</option>
+      <option value="4">4</option>
+    </select>
+   </h4>
+  
+   <input type="submit" value="5.Algoritmo clusters"   onClick="document.getElementById('oculto5').style.visibility='visible'" /> &nbsp;
+  <div id="oculto5" style="visibility:hidden">
+    Ejecutando algoritmo cluster
+ </div>
+</form>
+
+<form action="/Visualizar_clustering.ejs" id="pospoForm" method="POST">
+
+  <input type="submit" value="6.Visualizar Clustering"   onClick="document.getElementById('oculto7').style.visibility='visible'" /> &nbsp;
+  <div id="oculto7" style="visibility:hidden">
+    Ejecutando proceso
+ </div>
+</form>
+</div>
+<div class="asociacion">
+<form action="/Alg_asocia.ejs" id="pospoForm" method="POST">
+  <h2>Algoritmo Asociacion</h2>
+  <h3>Selecciona el soporte</h3><br> 
+  <select name="soporte">
+    <option value="40">40</option>
+    <option value="50">50</option>
+    <option value="60">60</option>
+    <option value="70">70</option>
+  </select><br> 
+  <h3>Selecciona la confianza</h3><br>
+  <select name="confianza">
+    <option value="40">40</option>
+    <option value="50">50</option>
+    <option value="60">60</option>
+    <option value="70">70</option>
+  </select><br> <br>
+  <input type="submit" value="7.Algoritmo Asociacion"   onClick="document.getElementById('oculto6').style.visibility='visible'" /> &nbsp;
+  <div id="oculto6" style="visibility:hidden">
+    Ejecutando algoritmo Asociacion
+ </div>
+</form>
+<form action="/Visualizar_asociacion.ejs" id="pospoForm" method="POST">
+
+  <input type="submit" value="8.Visualizar Asociacion"   onClick="document.getElementById('oculto8').style.visibility='visible'" /> &nbsp;
+  <div id="oculto8" style="visibility:hidden">
+    Ejecutando proceso
+ </div>
+</form>
+
+</div>
+</body>
+</html>

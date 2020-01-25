@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/javascripts/Carga_fichero.js"></script>
+  
+</head>
+
+<body>
+    <a href="http://localhost:3000/" class="">
+        <img src="/images/boton_inicio.png" style="width: 100px" style="height: 100px"></a>
+        <pr>
+            <h2 align="center">Sistema de descubrimiento de conocimiento</h2> 
+              <h2 align="center">a partir de datos censales y de negocio</h2></pr>
+     <div class="block_container">       
+    <div class="izquierda">
+        <form action="/CargarEmpresa.ejs" id="empresaForm" method="POST" onchange="selectedEmpresaFile(this)">
+            <p>
+                <input id="empresaInput" type="file" name="file"  accept="*.csv" />
+                <input type="hidden" id="empresaContent" name="empresaContent"/>
+            </p>
+            <input type="submit" value="Cargar empresas"   onClick="document.getElementById('oculto').style.visibility='visible'" /> &nbsp;
+            <div id="oculto" style="visibility:hidden">
+                Cargando fichero datos de empresas espere unos minutos
+             </div>
+        </form>
+        <form action="GET">
+            <p>Datos empresa<p>
+                    <table>
+                        <tr>
+                            <th>COD_DITRITO</th>
+                            <th>DESC_DISTRITO</th>
+                            <th>DESC_BARRIO</th>
+                            <th>ROTULO</th>
+                        </tr>
+                        <tbody>
+                            <%for (var i=1;i< task.length ;i++){%>
+                            <tr>
+                                <td>
+                                    <%=task[i].id_distrito_local %>
+                                </td>
+                                <td>
+                                    <%=task[i].desc_distrito_local %>
+                                </td>
+                                <td>
+                                    <%=task[i].desc_barrio_local %>
+                                </td>
+                                <td>
+                                    <%=task[i].rotulo %>
+                                </td>
+                            </tr>
+                            <%}%>
+</tbody>
+</table>
+</form>
+</div>
+
+<div class="derecha">
+        
+<form action="/CargarCenso.ejs" id="censoForm" method="POST" onchange="selectedCensoFile(this)">
+<p>
+        <input id="censoInput" type="file" name="file"  accept="*.csv" />
+<input type="hidden" id="censoContent" name="censoContent"/>
+</p>
+ <input type="submit" value="Cargar censo personas"  onClick="document.getElementById('ocultos').style.visibility='visible'"  /> &nbsp;
+ <div id="ocultos" style="visibility:hidden">
+   Cargando fichero datos censales espere unos minutos
+</div>
+</form>
+<form action="GET">
+<p>Datos censales<p>
+<table>
+<tr>
+<th>COD_DITRITO</th><th>DESC_DISTRITO</th><th>DESC_BARRIO</th><th>EDAD</th>
+</tr>
+<tbody >
+<%for (var i=1;i< task1.length ;i++){%>
+                            <tr>
+                                <td>
+                                    <%=task1[i].COD_DISTRITO %>
+                                </td>
+                                <td>
+                                    <%=task1[i].DESC_DISTRITO %>
+                                </td>
+                                <td>
+                                    <%=task1[i].DESC_BARRIO %>
+                                </td>
+                                <td>
+                                    <%=task1[i].COD_EDAD_INT %>
+                                </td>
+                            </tr>
+                            <%}%>
+</tbody>
+</table>
+</form>
+</div>
+</div>  
+</body>
+</html>
