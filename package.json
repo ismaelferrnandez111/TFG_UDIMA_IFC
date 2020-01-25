@@ -1,0 +1,33 @@
+{
+  "name": "proyecto",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "apriori": "^1.0.7",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "csv-parser": "^2.3.2",
+    "debug": "~2.6.9",
+    "ejs": "^2.7.4",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.1.6",
+    "express-session": "^1.17.0",
+    "fast-csv": "^3.4.0",
+    "http-errors": "~1.6.3",
+    "mongoose": "^5.7.12",
+    "mongose": "0.0.2-security",
+    "morgan": "^1.9.1",
+    "node-apriori": "^1.0.0",
+    "node-kmeans": "^1.1.9",
+    "node-weka": "0.0.8",
+    "nodemon": "^2.0.1",
+    "pug": "2.0.0-beta11",
+    "simple-apriori": "^1.0.0",
+    "string-to-stream": "^3.0.1",
+    "to-array": "^0.1.4"
+  }
+}
