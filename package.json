@@ -16,7 +16,7 @@
     "express": "^4.16.4",
     "express-fileupload": "^1.1.6",
     "express-session": "^1.17.0",
-    "fast-csv": "^3.4.0",
+    "fast-csv": "^4.3.6",
     "http-errors": "~1.6.3",
     "mongoose": "^5.7.12",
     "mongose": "0.0.2-security",
