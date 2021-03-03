@@ -25,7 +25,7 @@
     "node-kmeans": "^1.1.9",
     "node-weka": "0.0.8",
     "nodemon": "^2.0.1",
-    "pug": "2.0.0-beta11",
+    "pug": "3.0.1",
     "simple-apriori": "^1.0.0",
     "string-to-stream": "^3.0.1",
     "to-array": "^0.1.4"
